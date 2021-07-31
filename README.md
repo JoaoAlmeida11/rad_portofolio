@@ -1,6 +1,6 @@
 # RAD
 
-Este projeto não é possível correr uma vez necessitar de ligação com a API do projeto. Apenas encontra-se disponível para fins de portofolio.
+Este projeto não é possível correr uma vez necessitar de ligação com a API do projeto. Apenas encontra-se disponível para fins de portfólio.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
