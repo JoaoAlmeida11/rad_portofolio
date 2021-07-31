@@ -1,5 +1,7 @@
 # RAD
 
+Este projeto não é possível correr uma vez necessitar de ligação com a API do projeto. Apenas encontra-se disponível para fins de portofolio.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
