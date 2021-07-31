@@ -1,0 +1,14 @@
+@startuml
+actor Utilizador
+boundary Página
+control Intermediário
+database Store
+database API
+
+Utilizador -> Página : Abre a página
+Página -> Intermediário: Preciso de informação
+Intermediário -> API: Preciso de informação para a página
+API -> Intermediário : Tens aqui a informação
+Intermediário -> Store : Guarda aí a informação da página
+Store -> Página : Já deixaram aqui a informação que tinhas pedido
+@enduml

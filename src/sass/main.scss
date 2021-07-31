@@ -1,0 +1,845 @@
+// Main Sass file
+@forward "base";
+// @forward "components";
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@font-face {
+  font-family: 'Abside';
+  src: local('Abside'), url(../fonts/Abside-Round1.ttf) format('truetype');
+}
+.abside {
+  font-family: 'Abside', sans-serif;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+header {
+  color: white;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  img {
+    height: 7vh;
+  }
+  .amarelo-newsletter {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #faa50a;
+    &:hover,
+    &:link,
+    &:visited,
+    &:active {
+      color: #faa50a;
+    }
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      display: inline;
+      padding: 0;
+      font-size: 1.2rem;
+      a,
+      a:link {
+        color: white;
+      }
+      a:hover,
+      a:active {
+        color: #faa50a;
+      }
+    }
+  }
+}
+.header-navigation-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  li {
+    padding-left: 3rem;
+    font-size: 1.2rem;
+    padding-bottom: 0;
+    a,
+    a:link {
+      color: white;
+    }
+    a:hover,
+    a:active {
+      color: #faa50a;
+    }
+  }
+}
+
+img {
+  height: 100%;
+  width: auto;
+}
+
+// https://css-tricks.com/almanac/properties/a/aspect-ratio/#dealing-with-legacy-browser-support
+iframe {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+}
+@supports not (aspect-ratio: 16 / 9) {
+  iframe::before {
+    float: left;
+    padding-top: 56.25%;
+    content: '';
+  }
+
+  iframe::after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+}
+body,
+.parede {
+  background-position: center center;
+  // background-repeat: no-repeat;
+  background-repeat: repeat-y;
+  background-attachment: fixed;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  background-size: 100vw auto;
+  &-clara,
+  main {
+    background-image: url('../img/parede.png');
+    // background-color: rgba(white, 0.4);
+  }
+  &-newsletter {
+    background-image: url('../img/parede-newsletter.png');
+    // background-color: rgba(white, 0.4);
+  }
+  &-escura {
+    background-image: url('../img/parede-escura-revista.png');
+  }
+  // min-height: 100vh;
+}
+a {
+  text-decoration: none;
+}
+main {
+  // min-height: 100vh;
+
+  section {
+    background-color: rgba(white, 0.3);
+    justify-content: center;
+    align-content: center;
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+    h1 {
+      height: 10vh;
+      width: auto;
+      margin: auto;
+      text-align: center;
+      font-size: 2rem;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    img {
+      margin: auto;
+    }
+    p,
+    ul,
+    ol {
+      margin: auto;
+      max-width: 1000px;
+    }
+    a {
+      display: flex;
+      justify-content: center;
+      min-width: 150px;
+      max-width: 200px;
+      margin: auto;
+      margin-top: 1rem;
+      color: white;
+      padding: 0.3rem;
+      border-radius: 5%;
+    }
+    .numeracao {
+      font-size: 2rem;
+      color: black;
+      font-weight: bold;
+    }
+    > article {
+      padding-top: 1.5rem;
+      padding-bottom: 1rem;
+    }
+    > .comentarios_pad, .comentarios_child {
+      padding: 1rem;
+      padding-bottom: 0rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .comentarios {
+      border-width: 2px;
+      border-color: black;
+      border-bottom-style: solid;
+      // background-color: white;
+      background-color: rgba(white, 0.75);
+
+      > .comentarios_img {
+        width: 30%;
+        padding-right: 1rem;
+      }
+      .commentarios_user {
+        padding-top: 1rem;
+        color: #9b2f2f;
+        font-size: 1.4rem;
+        padding-bottom: 0;
+      }
+      .commentarios_icons {
+        padding-top: 0.5rem;
+        padding-bottom: 0.7rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: auto;
+  p {
+    font-size: 1.1rem;
+  }
+  div {
+    padding-left: 15%;
+    padding-right: 15%;
+    input {
+      width: 100%;
+      color: black;
+      padding: 0.5rem;
+      border: 1px solid rgba(31, 31, 31, 0.8);
+      margin-bottom: 1.5rem;
+      :focus {
+        color: white;
+        background-color: black;
+      }
+    }
+  }
+  > input {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    color: white;
+    min-width: 150px;
+    max-width: 200px;
+    border-radius: 5%;
+    padding: 0.3rem;
+    border: none;
+  }
+  > label {
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+  }
+  > div.comment {
+    padding: 1.5rem;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    display: flex;
+    flex-direction: row;
+
+    .comment_img {
+      width: 30%;
+    }
+    .comment_form {
+      width: 100%;
+      div {
+        text-align: left;
+        padding: 0;
+        padding-left: 1rem;
+        padding-bottom: 1rem;
+      }
+      //** publicar input submit fazendo parte da div lateral do form
+      // > input {
+      //   width: 30%;
+      //   color: white;
+      // }
+    }
+    > div {
+      padding: 0;
+    }
+  }
+
+  > textarea {
+    margin: 1.5rem;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    resize: none;
+    overflow: auto;
+  }
+}
+
+footer {
+  background-color: black;
+  color: white;
+  padding-top: 1.5rem;
+  padding-bottom: 5rem; //para a nav n ficar por cima
+  article {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    padding-bottom: 1.5rem;
+    a,
+    span {
+      color: white;
+    }
+    a:link {
+      color: white;
+      text-decoration: none;
+    }
+    a:hover,
+    a:active {
+      color: #faa50a;
+      text-decoration: none;
+    }
+  }
+  div{
+    > a{
+      padding-right: 1rem;
+    }
+  }
+}
+nav {
+  position: fixed;
+  z-index: 2;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 1.5rem;
+  width: 100vw;
+}
+.nav-backgroundColor-black {
+  background-color: black;
+}
+.nav-backgroundColor-white {
+  background-color: white;
+}
+
+.icon {
+  max-width: 30px;
+}
+
+.revista-capa {
+  // height: 47.5vh;
+  width: auto;
+  max-height: 350px;
+  cursor: pointer;
+}
+
+.bg-transparency {
+  filter: contrast(110%);
+  -webkit-filter: contrast(110%);
+  &-red {
+    background-color: rgba($color: #9b2f2f, $alpha: 0.95);
+  }
+  &-black {
+    background-color: rgba($color: black, $alpha: 0.7);
+  }
+}
+.margin-bottom-pdfViewer {
+  margin-bottom: 2rem;
+}
+.pdfViewer {
+  width: 100vw;
+  margin: 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  // margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: black;
+  > div {
+    display: flex;
+    > svg,
+    span {
+      margin: auto;
+    }
+    .zoomIcon {
+      margin-left: 3.5rem !important;
+    }
+    .expandIcon {
+      margin-right: 3.5rem !important;
+    }
+    > .IconsPDFBottom {
+      padding: 1rem;
+    }
+    > div {
+      display: flex;
+      justify-content: 'center';
+      align-items: 'center';
+      margin: auto;
+    }
+    .react-pdf__Document {
+      display: flex;
+    }
+  }
+  p {
+    display: inline;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.3rem;
+  }
+}
+
+.MenuHamburgerList {
+  background-color: black;
+  list-style: none;
+  position: fixed;
+  bottom: 5rem;
+  z-index: 10;
+  margin: auto;
+  width: 100%;
+  padding: 0;
+  > li {
+    border-bottom: 2px solid white;
+    padding: 0.7rem;
+    text-align: center;
+
+    > a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
+  }
+  > li:last-child {
+    border: none;
+  }
+}
+
+p,
+ol {
+  padding-right: 2rem;
+  padding-left: 2rem;
+  padding-bottom: 1rem;
+  font-size: 1rem;
+}
+ol {
+  padding-left: 3.5rem;
+}
+li {
+  padding-bottom: 1rem;
+}
+button{
+  margin: auto;
+  margin-top: 1rem;
+  border-radius: 7%;
+}
+.button, button {
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  // border-radius: 7%  ;
+  width: 100%;
+  max-width: 30rem;
+}
+.button:hover, button {
+  color: #faa50a;
+}
+.comentarios-responder{
+  color: black;
+  margin: 0;
+  text-align: right;
+  font-size: 1rem;
+}
+
+.font-weight-bold {
+  font-weight: bolder;
+}
+.font-style-italic {
+  font-style: italic;
+}
+
+// signup
+.pt-0 {
+  padding-top: 0;
+}
+.pt-1 {
+  padding-top: 1rem;
+}
+.pb-0 {
+  padding-bottom: 0;
+}
+.pb-1 {
+  padding-bottom: 1rem;
+}
+.pb-2 {
+  padding-bottom: 2rem;
+}
+.pe-1 {
+  padding-right: 1rem;
+}
+.pl-3 {
+  padding-left: 3rem;
+}
+.text-right {
+  text-align: right;
+}
+.font-size-1-5 {
+  font-size: 1.5rem;
+}
+.m-0 {
+  margin: 0;
+}
+.m-auto {
+  margin: auto;
+}
+.mb-2 {
+  margin-bottom: 2rem;
+}
+.text-center {
+  text-align: center !important;
+  > a {
+    display: inline;
+    color: black;
+  }
+}
+.text-black {
+  color: black;
+}
+.text-download {
+  // vertical-align: middle;
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  // border-radius: 7%  ;
+  width: 100%;
+  max-width: 20rem;
+  line-height: 3rem;
+}
+.text-download:hover {
+  color: #faa50a;
+}
+.checkbox {
+  display: flex;
+  margin: auto;
+  padding: 0;
+  input {
+    flex: 0%;
+    text-align: right;
+    height: 1.1rem;
+  }
+  label {
+    width: 17rem;
+    flex: 75%;
+    font-size: 1.1rem;
+  }
+}
+.button {
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  // border-radius: 7%  ;
+  width: 100%;
+  max-width: 30rem;
+}
+
+.auth-input-white {
+  color: white;
+}
+.registate-btn {
+  color: white !important;
+  padding: 0.5rem;
+  font-size: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.auth-input-yellow {
+  color: #faa50a;
+}
+
+// recomendacoes
+.min-page-height {
+  padding-top: 1rem;
+  min-height: 70vh;
+  vertical-align: baseline;
+  padding-bottom: 17vh;
+}
+.recomendacoes {
+  .Collapsible__contentInner {
+    padding-top: 1rem;
+  }
+  p {
+    color: black;
+    text-align: left;
+  }
+  a {
+    margin: auto;
+  }
+  ol {
+    color: black;
+    text-align: left;
+  }
+}
+.Collapsible {
+  background-color: rgba(black, 0.85);
+  color: white;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  > div {
+    background-color: white;
+    // background-image: url('../img/parede-newsletter.png');
+    // background-position: center center;
+    // background-repeat: no-repeat;
+    // background-attachment: fixed;
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    // background-size: cover;
+    a {
+      font-size: 1.2rem;
+      color: #9b2f2f;
+      padding: 1rem;
+      display: block;
+    }
+  }
+  .Collapsible__contentOuter {
+    transition: none;
+  }
+}
+.Collapsible__trigger {
+  cursor: pointer;
+}
+
+.react-pdf__Page.prevPage {
+  position: absolute !important;
+  text-align: center;
+  margin: 0 auto;
+  z-index: 1;
+}
+.listagem-revistas-item {
+  padding-top: 1.5rem;
+}
+.votes {
+  font-size: 1.5rem;
+}
+.mais-comentarios{
+  display: flex;
+  margin: auto;
+  margin-top: 1rem;
+  width: auto;
+}
+
+.vote-cursor{
+  cursor: pointer;
+}
+.color-danger{
+  color: red;
+}
+
+@media (max-width: 600px) {
+  .react-pdf__Document {
+    display: flex;
+    max-width: 100vw !important;
+    min-height: 40vh;
+  }
+  .react-pdf__Page__textContent {
+    display: none;
+  }
+  .pdfV {
+    width: 100vw;
+  }
+  .pdf-canva-normal {
+    .react-pdf__Page__canvas {
+      width: auto !important;
+      height: 85vh !important;
+    }
+  }
+  .pdf-canva-ampliado {
+    .react-pdf__Page__canvas {
+      width: auto !important;
+      height: auto !important;
+    }
+  }
+  .pdf-canva-fullscreen-normal {
+    .react-pdf__Page__canvas {
+      width: auto !important;
+      height: auto !important;
+    }
+  }
+  .pdf-canva-fullscreen-ampliado {
+    .react-pdf__Page__canvas {
+      width: auto !important;
+      height: auto !important;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .comentarios_pad{
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .login-page {
+    padding-top: 15vh;
+    min-height: 75.5vh;
+  }
+  .signup-page {
+    padding-top: 10vh;
+  }
+  .revistas-page {
+    padding-top: 5vh;
+  }
+  p {
+    font-size: 1rem;
+  }
+  iframe {
+    width: 100%;
+    // padding-right: 1rem;
+    // padding-left: 1rem;
+    // margin: auto;
+    // display: flex;
+    // justify-content: center;
+  }
+  .react-pdf__Document {
+    display: flex;
+    min-height: 70vh;
+  }
+  .pdf-canva-normal {
+    .react-pdf__Page__canvas {
+      width: auto !important;
+      height: 65vh !important;
+    }
+  }
+  .pdf-canva-ampliado {
+    .react-pdf__Page__canvas {
+      width: auto !important;
+      height: 70vh !important;
+    }
+  }
+  .pdf-canva-fullscreen-normal {
+    .react-pdf__Page__canvas {
+      width: auto !important;
+      height: 85vh !important;
+    }
+  }
+  .pdf-canva-fullscreen-ampliado {
+    .react-pdf__Page__canvas {
+      width: auto !important;
+      height: 90vh !important;
+    }
+  }
+  .img-recomendacoes {
+    max-height: 400px;
+    width: auto;
+    max-width: 90vw;
+  }
+}
+@media (min-width: 700px) {
+  .pdfV {
+    display: flex;
+  }
+}
+@media (min-width: 768px) {
+  .login-page {
+    padding-top: 16.5vh;
+    min-height: 80vh;
+  }
+  .signup-page {
+    padding-top: 12.5vh;
+    min-height: 80vh;
+  }
+  .revistas-page {
+    padding-top: 12vh;
+  }
+  iframe {
+    max-height: 92vh;
+    // max-width: 720px;
+    // padding-right: 1rem;
+    // padding-left: 1rem;
+    // margin: auto;
+    // display: flex;
+    // justify-content: center;
+  }
+  .react-pdf__Document {
+    display: flex;
+    min-height: 90vh;
+  }
+  .pdf-canva-normal {
+    .react-pdf__Page__canvas {
+      width: auto !important;
+      height: 70vh !important;
+    }
+  }
+  .pdf-canva-ampliado {
+    .react-pdf__Page__canvas {
+      width: auto !important;
+      height: 75vh !important;
+    }
+  }
+  .pdf-canva-fullscreen-normal {
+    .react-pdf__Page__canvas {
+      width: auto !important;
+      height: 85vh !important;
+    }
+  }
+  .pdf-canva-fullscreen-ampliado {
+    .react-pdf__Page__canvas {
+      width: auto !important;
+      height: 90vh !important;
+    }
+  }
+  .img-recomendacoes {
+    max-height: 400px;
+    width: auto;
+    max-width: 90vw;
+  }
+}
+@media (min-width: 992px) {
+}
+
+// quando aparece a navegação no header -> 1130px
+@media (min-width: 1130px) {
+  footer {
+    padding-bottom: 1rem;
+  }
+  .revistas-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .listagem-revistas-item {
+    flex: 25%;
+  }
+  .parede-escura {
+    background-image: url('../img/parede.png');
+  }
+}
+@media (min-width: 1200px) {
+  .img-recomendacoes {
+    max-height: 400px;
+    width: auto;
+    max-width: 60vw;
+  }
+}
+@media (min-width: 1400px) {
+}
